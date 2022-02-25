@@ -1,3 +1,3 @@
-# iSchool Assigments of Full Stack Web Development given by Intellipaat
+# iSchoolConnect Assigments of Full Stack Web Development given by Intellipaat
 
 
