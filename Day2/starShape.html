@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas-star</title>
+    <style>
+        canvas{
+            border: 2px solid rgb(28, 206, 206);
+     
+        }
+    </style>
+    <script>
+        var can, ctx;
+        addEventListener("load",init);
+        function init(){
+            can = document.getElementsByTagName("canvas")[0];
+            ctx = can.getContext("2d");
+            
+            ctx.moveTo(300,100); 
+            ctx.lineTo(250,150); 
+            ctx.lineTo(150,150); 
+            ctx.lineTo(250,200); 
+            ctx.lineTo(150,300); 
+            ctx.lineTo(300,250); 
+            ctx.lineTo(450,300);
+            ctx.lineTo(350,200);
+            ctx.lineTo(450,150);
+            ctx.lineTo(350,150);
+            ctx.lineTo(300,100);
+            ctx.stroke();
+            ctx.fillStyle="rgba(255,255,0,0.5)";
+            ctx.fill();
+        }
+    </script>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+</body>
+</html>
