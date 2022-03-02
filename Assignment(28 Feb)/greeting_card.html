@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Card</title>
+    <style>
+         .container{
+            border: 1px solid rgb(28, 47, 49);
+            text-align: center;
+            background-color: rgb(205, 223, 181);
+            margin : 20px;
+        }
+        .box1{
+         
+        }
+        .box2{
+
+        }
+        .box3{
+
+        }
+        canvas{
+            margin-top: 10px;
+            border:1px solid aqua;
+            display: block;
+            margin: auto;
+            background-color: rgb(27, 3, 26);
+        }
+    </style>
+    <script>
+       addingTextonDisplay=()=>
+       {
+           let msg=inputFromDocument();
+           ctx.fillStyle="Red";
+           ctx.font="50px Arial";
+           ctx.fillText(msg,400,400);
+           ctx.stroke();
+       }
+       inputFromDocument=()=>
+       {
+           var name=document.getElementById("name_input_text").value;
+           var birthdate=document.getElementById("date_input_text").value;
+           let mymsg=`Happy Birthday ${name} on ${birthdate}`;
+           return mymsg;
+       }  
+    </script>
+
+    <script>
+        var can,ctx,bx=0,by=0,bd=100;;
+        addEventListener("load",init)
+        function init()
+        {
+            can=document.getElementsByTagName("canvas")[0];
+            ctx=can.getContext("2d");
+            can.width=1450;
+            can.height=500;
+            ctx.beginPath();
+            ctx.moveTo(108, 0.0);
+            ctx.lineTo(141, 70);
+            ctx.lineTo(218, 78.3);
+            ctx.lineTo(172, 131);
+            ctx.lineTo(175, 205);
+            ctx.lineTo(108, 170);
+            ctx.lineTo(41.2, 205);
+            ctx.lineTo(55, 131);
+            ctx.lineTo(1, 78);
+            ctx.lineTo(75, 68);
+            ctx.lineTo(108, 0);
+            ctx.closePath();
+            ctx.fillStyle='red';
+            ctx.fill();
+            ctx.strokeStyle='aqua';
+            ctx.stroke();
+    };
+    
+
+    </script>
+</head>
+
+<body>
+   <div class="container">
+        <div class="box1">
+            <h3>Name</h3><h2><input type="text" id="name_input_text"/></h2>
+        </div>
+                
+        <div class="box2">
+            <h3>Date</h3><h2><input type="date" id="date_input_text"/></h2>
+        </div>
+        
+        <div class="box3">
+            <h3>Submit Button </h3><h2><button id="my_btn" onclick="addingTextonDisplay()">Submit</button></h2>
+        </div>
+             
+                
+    </div>         
+    <canvas id='canvas1'>
+        
+
+    </canvas>
+    
+</body>
+</html>
