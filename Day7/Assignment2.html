@@ -1,0 +1,59 @@
+<!-- Assignment : Compparing the priority of Onload event from Different methods -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+       #container{
+           height: 200px;
+           width: 600px;
+           text-align: center;
+           background-color: aqua;
+           border: 1px solid black;
+           margin: 100px auto;
+       }
+       div p{
+           font-size: large;
+       }
+   </style>
+
+    <script>
+      window.addEventListener("load", onWindowLoadFun);
+      document.addEventListener("DOMContentLoaded", DOMContentLoadedFun);
+
+      function onBodyLoadFun() {                         
+        var para1 = document.createElement("p");
+        para1.innerHTML = "onBodyLoad function is Loaded from onLoad in body";
+        document.getElementById("container").appendChild(para1);
+      }
+
+      function onWindowLoadFun() {
+        var para2 = document.createElement("p");
+        para2.innerHTML = "onWindowLoadFun is Loaded using load eventListener on window";
+        document.getElementById("container").appendChild(para2);
+      }
+
+      function DOMContentLoadedFun() {
+        var para3 = document.createElement("p");
+        para3.innerHTML = "DOMContentLoadedFun is loaded using DOMContentLoded";
+        document.getElementById("container").appendChild(para3);
+      }
+
+    </script>
+  </head>
+
+  <body onload="onBodyLoadFun()">
+    <div id="container">
+      <h3>This is a Container</h3>
+      <!-- <h5>To Check to priority of Events trigger on onload</h5> -->
+
+    </div>
+
+  </body>
+</html>
+
